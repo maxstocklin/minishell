@@ -37,12 +37,12 @@ MiniShell includes several built-in commands, including ```echo```, ```export```
     cd minishell
     ```
 
-3. Compile the program using the provided Makefile: make
+3. Compile the program using the provided Makefile:
     ```bash
     make
     ```
     
-4. Run the shell: ./minishell
+4. Run the shell:
     ```bash
     ./minishell
     ```
