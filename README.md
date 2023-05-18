@@ -8,10 +8,10 @@ MiniShell is a lightweight, minimalistic Unix shell implemented in C. Despite it
 MiniShell includes the following features:
 
 ### Redirections: 
-The <, <<, > and >> redirection operators are fully supported, allowing you to redirect input and output from and to files or commands.
+The ```<```, ```<<```, ```>``` and ```>>``` redirection operators are fully supported, allowing you to redirect input and output from and to files or commands.
 
 ### Pipes: 
-Use the | operator to pipe the output of one command to the input of another.
+Use the ```|``` operator to pipe the output of one command to the input of another.
 
 ### Environment Variables: 
 Environment variables can be accessed and modified, providing the ability to store user-defined settings.
@@ -20,10 +20,10 @@ Environment variables can be accessed and modified, providing the ability to sto
 The special variable $? can be used to retrieve the exit status of the last executed command.
 
 ### Signal Handling: 
-MiniShell can handle ctrl-D, ctrl-C, and ctrl-\ signals, replicating the functionality of a full-featured shell.
+MiniShell can handle ```ctrl-D```, ```ctrl-C```, and ```ctrl-\``` signals, replicating the functionality of a full-featured shell.
 
 ### Builtins: 
-MiniShell includes several built-in commands, including echo, export, unset, cd, pwd, env, and exit.
+MiniShell includes several built-in commands, including ```echo```, ```export```, ```unset```, ```cd```, ```pwd```, ```env```, and ```exit```.
 
 ## Installation and Usage
 
