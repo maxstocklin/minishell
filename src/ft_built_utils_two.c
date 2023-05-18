@@ -15,6 +15,7 @@
 int	check_num(char *str)
 {
 	int	i;
+
 	i = 0;
 	while (str[i])
 	{

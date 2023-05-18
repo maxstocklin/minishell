@@ -21,7 +21,6 @@ int	ft_free_shell(t_shell *lst)
 	lst = lst->next;
 	while (lst != NULL)
 	{
-		// printf("hello la mif %s\n", lst->data);
 		tmp = lst;
 		lst = lst->next;
 		free(tmp->data);
@@ -65,7 +64,7 @@ int	ft_free_tabs(t_tabs *lst)
 		ft_free(lst);
 		lst = lst->next;
 		free(tmp);
-	} 
+	}
 	lst = end;
 	lst->next = NULL;
 	return (0);
@@ -98,16 +97,3 @@ void	ft_free_var(t_var var)
 		free(var.exp[i++]);
 	free(var.exp);
 }
-
-//void	ft_free_array(char **exp, int len_env)
-//{
-//	int	i;
-//
-//	i = 0;
-//	while (i < len_env)
-//	{
-//		free(exp[i]);
-//		i++;
-//	}
-//	free(exp);
-//}

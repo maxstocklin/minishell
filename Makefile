@@ -4,8 +4,8 @@ NAME	= minishell
 CC		= gcc
 RM		= rm -rf
 FLAGS	= -Werror -Wextra -Wall -g3 -fsanitize=address
-#LIBS	= -L /usr/local/Cellar/readline/8.2.1/lib -lreadline -I /usr/local/Cellar/readline/8.2.1/include/readline
-LIBS	= -L $(HOME)/.brew/Cellar/readline/8.2.1/lib -lreadline -I $(HOME)/.brew/Cellar/readline/8.2.1/include/readline
+LIBS	= -L /usr/local/Cellar/readline/8.2.1/lib -lreadline -I /usr/local/Cellar/readline/8.2.1/include/readline
+#LIBS	= -L $(HOME)/.brew/Cellar/readline/8.2.1/lib -lreadline -I $(HOME)/.brew/Cellar/readline/8.2.1/include/readline
 MKDIR_P = mkdir -p
 
 ##-----VARIABLES-----##
@@ -45,20 +45,20 @@ SRC		=	main.c \
 			ft_lsts.c \
 			ft_free_lsts_one.c \
 			ft_free_lsts_two.c \
-			ft_verifs.c \
-			ft_dollar_one.c \
-			ft_dollar_two.c \
-			ft_dollar_three.c \
-			ft_pipex.c \
+			ft_pipex_one.c \
+			ft_pipex_two.c \
 			ft_redops_handler.c \
 			ft_redirections.c \
 			ft_check.c \
-			ft_parsing_paths.c \
+			ft_parsing_paths_one.c \
+			ft_parsing_paths_two.c \
 			ft_built.c \
+			ft_built_two.c \
 			ft_built_utils_one.c \
 			ft_built_utils_two.c \
 			ft_update_exp.c \
-			ft_update_env.c \
+			ft_update_env_one.c \
+			ft_update_env_two.c \
 			ft_unset.c \
 			ft_export_one.c \
 			ft_export_two.c \
@@ -66,10 +66,15 @@ SRC		=	main.c \
 			ft_signals.c \
 			ft_malloc.c \
 			ft_trim_quotes.c \
-			ft_new_dolla.c \
-			ft_parse_spaces_tabs.c \
+			ft_dollar_one.c \
+			ft_dollar_two.c \
+			ft_dollar_three.c \
+			ft_dollar_four.c \
+			ft_reparse_spaces_one.c \
+			ft_reparse_spaces_two.c \
+			ft_reparse_spaces_three.c \
 			ft_ambiguity.c \
-			ft_write.c
+			ft_write.c 
 
 HEAD	=	minishell.h
 
@@ -85,12 +90,12 @@ HEADERS = $(addprefix $(PATH_HEAD),$(HEAD))
 all:						$(NAME) asciiart
 
 $(NAME):					$(DIR_OBJ) $(OBJS) $(HEADERS)
-							$(CC)  $(FLAGS) -I $(PATH_HEAD) -L $(HOME)/.brew/Cellar/readline/8.2.1/lib -lreadline -lhistory -o $(@) $(OBJS)
-#							$(CC)  $(FLAGS) -I $(PATH_HEAD) -L /usr/local/Cellar/readline/8.2.1/lib -lreadline -lhistory -o $(@) $(OBJS)
+#							$(CC)  $(FLAGS) -I $(PATH_HEAD) -L $(HOME)/.brew/Cellar/readline/8.2.1/lib -lreadline -lhistory -o $(@) $(OBJS)
+							$(CC)  $(FLAGS) -I $(PATH_HEAD) -L /usr/local/Cellar/readline/8.2.1/lib -lreadline -lhistory -o $(@) $(OBJS)
 
 $(PATH_OBJ)%.o:				$(PATH_SRC)%.c
-							$(CC) $(FLAGS) -c -I $(PATH_HEAD) -I $(HOME)/.brew/Cellar/readline/8.2.1/include/ -o $@ $<
-#							$(CC) $(FLAGS) -c -I $(PATH_HEAD)  -I /usr/local/Cellar/readline/8.2.1/include/ -o $@ $<
+#							$(CC) $(FLAGS) -c -I $(PATH_HEAD) -I $(HOME)/.brew/Cellar/readline/8.2.1/include/ -o $@ $<
+							$(CC) $(FLAGS) -c -I $(PATH_HEAD)  -I /usr/local/Cellar/readline/8.2.1/include/ -o $@ $<
 
 ${DIR_OBJ} :
 		@mkdir -p ${DIR_OBJ}

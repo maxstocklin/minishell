@@ -6,9 +6,11 @@
 /*   By: mstockli <mstockli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 13:40:05 by mstockli          #+#    #+#             */
-/*   Updated: 2023/02/15 20:03:39 by mstockli         ###   ########.fr       */
+/*   Updated: 2023/03/20 17:37:37 by mstockli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//todo : line 21 -> ft_write(option = 3 || 1 withno cd ?)
 
 #include "../includes/minishell.h"
 
@@ -16,8 +18,6 @@ void	ft_handle_heredoc(t_tabs *tabs, t_var *var, int i)
 {
 	ft_heredoc(tabs, var, i);
 	i += 1;
-	//ft_write(tabs->redop[i], 3, 1);
-	//todo : ft_write(option = 3 || 1 withno cd ?)
 }
 
 void	ft_handle_append_redir(t_tabs *tabs, t_var *var, int i)
